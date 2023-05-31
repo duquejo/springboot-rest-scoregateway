@@ -1,0 +1,31 @@
+
+server:
+  port: 8090
+  error:
+    whitelabel:
+      enabled: false
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: postgres
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update # It will reload database values for every springboot reload.
+      naming:
+        strategy: org.hibernate.cfg.ImprovedNamingStrategy
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+  data:
+    rest:
+      page-param-name: page
+      limit-param-name: limit
+      sort-param-name: sort
+      default-page-size: 5
+      max-page-size: 20
+
+jwt:
+  secret: "P455w0rD2023+"
